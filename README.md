@@ -13,24 +13,24 @@ This code is used to design light, stiff structures via topology optimization us
 
 The code is executed in Matlab by calling
 
-top(nelx, nely, nelz, volfrac, rmin, truss, Es, vs, minVF, maxVF, maxit) 
+    top(nelx, nely, nelz, volfrac, rmin, truss, Es, vs, minVF, maxVF, maxit) 
  
-where: nelx, nely, and nelz are the number (nel* >= 1) of unit-size square or cube finite elements in the mesh of the design domain
-       volfrac is the upper bound on the volume fraction (0.0 < volfrac < 1.0) of the domain that may be solid
-       rmin is the radius of the sensitivity filter, in units of elements (rmin >= 1)
-       truss is the type of microstructure (‘simp’, ‘bound’, ‘iso’, ‘octet’, ‘orc’)
-       Es is the constituent material’s Young’s modulus (Es > 0.0)
-       vs is the constituent material’s Poisson’s ratio (0.0 < vs < 0.5 typically)
-       minVF and maxVF are respectively lower and upper bounds on the local element density (0.0 < minVF < maxVF < 1.0)
-       maxit is the maximum number of optimization iterations allowed for convergence (maxit > 1)
+    where: nelx, nely, and nelz are the number (nel* >= 1) of unit-size square or cube finite elements in the mesh of the design domain
+           volfrac is the upper bound on the volume fraction (0.0 < volfrac < 1.0) of the domain that may be solid
+           rmin is the radius of the sensitivity filter, in units of elements (rmin >= 1)
+           truss is the type of microstructure (‘simp’, ‘bound’, ‘iso’, ‘octet’, ‘orc’)
+           Es is the constituent material’s Young’s modulus (Es > 0.0)
+           vs is the constituent material’s Poisson’s ratio (0.0 < vs < 0.5 typically)
+           minVF and maxVF are respectively lower and upper bounds on the local element density (0.0 < minVF < maxVF < 1.0)
+           maxit is the maximum number of optimization iterations allowed for convergence (maxit > 1)
 
 The five designs (a)-(e) of Example 6.1 of the 2019 article can be obtained respectively by calling
 
-top(1, 60, 20, 0.50, 1.5, ‘simp’,  1.0, 0.3, 0.001, 1.0, 150)
-top(1, 60, 20, 0.50, 1.5, ‘bound’, 1.0, 0.3, 0.001, 1.0, 150) 
-top(1, 60, 20, 0.50, 1.5, ‘iso’,   1.0, 0.3, 0.001, 1.0, 150) 
-top(1, 60, 20, 0.50, 1.5, ‘octet’, 1.0, 0.3, 0.001, 1.0, 150) 
-top(1, 60, 20, 0.50, 1.5, ‘orc’,   1.0, 0.3, 0.001, 1.0, 150) 
+    top(1, 60, 20, 0.50, 1.5, ‘simp’,  1.0, 0.3, 0.001, 1.0, 150)
+    top(1, 60, 20, 0.50, 1.5, ‘bound’, 1.0, 0.3, 0.001, 1.0, 150) 
+    top(1, 60, 20, 0.50, 1.5, ‘iso’,   1.0, 0.3, 0.001, 1.0, 150) 
+    top(1, 60, 20, 0.50, 1.5, ‘octet’, 1.0, 0.3, 0.001, 1.0, 150) 
+    top(1, 60, 20, 0.50, 1.5, ‘orc’,   1.0, 0.3, 0.001, 1.0, 150) 
 
 Modification of the boundary conditions imposed on the design domain, e.g. to obtain the designs of Example 6.2 or 6.3 of the 2019 article, requires changing the assigned loaded nodes (for non-homogeneous natural boundary conditions) and fixed nodes (for homogeneous essential boundary conditions). See lines 79 – 94. 
 
