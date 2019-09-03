@@ -157,7 +157,7 @@ if D == 0
 	C1212 = G;
 else % return the deriviatives instead
 	C1111 = ((DE*(1-v)-E*Dv)*(1-v-2*v^2)-E*(1-v)*(-Dv-4*v*Dv)) / (1-v-2*v^2)^2;
-	C1122 = ((DE*v+E*Dv)*(1-v-2*v^2)-E*(1-v)*(-Dv-4*v*Dv)) / (1-v-2*v^2)^2;
+	C1122 = ((DE*v+E*Dv)*(1-v-2*v^2)-E*v*(-Dv-4*v*Dv)) / (1-v-2*v^2)^2;
 	C1212 = DG;
 end
 CE = [C1111   0     0     0   C1122   0     0     0   C1122;
