@@ -139,7 +139,7 @@ for l = 1:8
            sp*tm,  rp*tm, -rp*sp;   -sp*tm,  rm*tm, -rm*sp;
           -sm*tp, -rm*tp,  rm*sm;    sm*tp, -rp*tp,  rp*sm;
            sp*tp,  rp*tp,  rp*sp;   -sp*tp, rm*tp,  rm*sp] / 8;
-	B = DN * 2*eye(3); G = kron(B', eye(3)); KE = KE + G' * CE * G / 4;
+	B = DN * 2*eye(3); G = kron(B', eye(3)); KE = KE + G' * CE * G / 8;
 end
 %%%%%%%%% DEFINE ELASTICITY TENSOR FOR DIFFERENT TRUSSES %%%%%%%%%%%%%%%%%%%%%%%
 function [CE] = get_CE(truss, x, Es, vs, Gs, i, j, k, D)
